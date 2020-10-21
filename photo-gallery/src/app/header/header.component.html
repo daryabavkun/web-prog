@@ -1,0 +1,13 @@
+<div class="toolbar" role="banner">
+    <span style="color:cornsilk ">Фотогалерея</span>
+    
+    <nav>
+        <a routerLink="/home" >Главная</a>
+        <a routerLink="/gallery" style="margin: 50px;">Категории</a>
+        <a routerLink="/author" >Авторы</a>
+        <a routerLink="/album" style="margin: 50px;">Альбомы</a>
+        <a routerLink="/files" >Файлы</a>
+        <a (click)="buttonLoginLogoutClick()" style="margin-left: 700px;" [textContent]="isAuthed ? 'Выйти' : 'Войти'"></a>
+    </nav>
+</div>
+      

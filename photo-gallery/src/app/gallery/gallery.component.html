@@ -1,0 +1,230 @@
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- Toolbar -->
+  <div class="content" role="main">
+    <input [(ngModel)]="findText" type="text">
+    <input class="search" placeholder="Сообщение :" [(ngModel)]="this.message">
+    <h1 style="padding: 10px; font-family: 'Times New Roman', Times, serif;">Категории</h1>
+    <table>
+        <tr *ngFor="let photosByCategory of photosView">
+            <td>
+            <h2>{{photosByCategory.name}}</h2>
+                <table>
+                    <tr *ngFor="let photosLine of photosByCategory.array">
+                        <td *ngFor="let photo of photosLine">
+                            <div class="holder">
+                                <img src={{photo.URL}} width="240px" >
+                                <div class="block" >
+                                    <div [innerHTML]="photo.description"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!-- <table>
+        <h2>Макро</h2>
+            <tr>
+                <td>
+                    <img src="\assets\oduvanchik-bozhia-korovka-nasekomoe.jpg" width="240px" >
+                </td>
+                <td>
+                    <img src="\assets\макро1.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\макро2.jpg" width="240px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="\assets\макро3.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\макро4.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\макро5.jpg" width="240px">
+                </td>
+            </tr>
+            <h2>Портрет</h2>
+            <tr>
+                <td>
+                    <img src="\assets\портрет1.jpg" width="240px">
+                </td>
+                <td>
+                        <img src="\assets\610_5241.jpg" width="240px" >
+                </td>
+                <td>
+                    <img src="\assets\портрет5.jpg" width="240px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="\assets\портрет3.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\потртет2.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\портрет4.jpg" width="240px">
+                </td>
+            </tr>
+            <h2>Архитектура</h2>
+            <tr>                           
+                <td>
+                    <img src="\assets\архитектура1.jpg" width="240px">
+                </td>
+                <td>
+                        <img src="\assets\архитектура2.jpg" width="240px" >
+                </td>
+                <td>
+                    <img src="\assets\архитектура3.jpg" width="240px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="\assets\s1200.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\архитектура4.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\архитектура5.jpg" width="240px">
+                </td>
+            </tr>
+            <h2>Пейзаж</h2>
+            <tr>                           
+                <td>
+                    <img src="\assets\15724568.d631aaf3.1200x1200o.24a044fff3a6.jpeg" width="240px">
+                </td>
+                <td>
+                        <img src="\assets\пейзаж1.jpg" width="240px" >
+                </td>
+                <td>
+                    <img src="\assets\пейзаж2.jpg" width="240px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="\assets\пейзаж3.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\пейзаж4.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\пейзаж5.jpg" width="240px">
+                </td>
+            </tr>
+            <h2>Город</h2>
+            <tr>                           
+                <td>
+                    <img src="\assets\город.jpg" width="240px">
+                </td>
+                <td>
+                        <img src="\assets\город1.jpg" width="240px" >
+                </td>
+                <td>
+                    <img src="\assets\город2.jpg" width="240px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="\assets\город3.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\город4.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\город5.jpg" width="240px">
+                </td>
+            </tr>
+            <h2>Черно-белое</h2>
+            <tr>                           
+                <td>
+                    <img src="\assets\чб.jpg" width="240px">
+                </td>
+                <td>
+                        <img src="\assets\чб1.jpg" width="240px" >
+                </td>
+                <td>
+                    <img src="\assets\чб2.jpg" width="240px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="\assets\чб3.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\чб4.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\чб5.jpg" width="240px">
+                </td>
+            </tr>
+            <h2>Фауна</h2>
+            <tr>                           
+                <td>
+                    <img src="\assets\фауна.jpg" width="240px">
+                </td>
+                <td>
+                        <img src="\assets\фауна1.jpg" width="240px" >
+                </td>
+                <td>
+                    <img src="\assets\фауна2.jpg" width="240px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="\assets\фауна3.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\фауна4.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\фауна5.jpg" width="240px">
+                </td>
+            </tr>
+            <h2>Флора</h2>
+            <tr>                           
+                <td>
+                    <img src="\assets\флора.jpg" width="240px">
+                </td>
+                <td>
+                        <img src="\assets\флора1.jpg" width="240px" >
+                </td>
+                <td>
+                    <img src="\assets\флора2.jpg" width="240px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="\assets\флора3.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\флора4.jpg" width="240px">
+                </td>
+                <td>
+                    <img src="\assets\флора5.jpg" width="240px">
+                </td>
+            </tr>
+        </table> -->
+        
+  </div>
+  
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+  <!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  

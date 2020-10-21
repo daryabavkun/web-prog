@@ -1,0 +1,40 @@
+<div class="textUnderHeader">
+    <br>
+    <input [(ngModel)]="photo.URL" type="text" placeholder="URL">
+    <input [(ngModel)]="photo.categoryName" type="text" placeholder="categoryName">
+    <input [(ngModel)]="photo.author" type="text" placeholder="author">
+    <br>
+    <ckeditor
+        [(ngModel)]="photo.description"
+        [config]="{uiColor: '#99000'}"
+        [readonly]="false"
+        debounce="500">
+    </ckeditor>
+    <br>
+    <button (click)="buttonCreateUpdateClick()" [textContent]="isUpdate ? 'Изменить' : 'Добавить'"></button>
+    <br>
+
+    <table rules="all" class="photosTable">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>URL</th>
+                <th>categoryName</th>
+                <th>author</th>
+                <th>description</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr *ngFor="let photo of photos">
+            <td>{{photo.id}}</td>
+            <td>{{photo.URL}}</td>
+            <td>{{photo.categoryName}}</td>
+            <td>{{photo.author}}</td>
+            <td>{{photo.description}}</td>
+            <td>
+                <button (click)="buttonLoadUpdateClick(photo.id)">Обновить</button>
+                <button (click)="buttonDeleteClick(photo.id)">Удалить</button>
+            </td>
+        </tr>
+    </table>
+</div>
